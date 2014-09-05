@@ -19,6 +19,8 @@
 		4E376F0519B90FFF009E50D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E376EED19B90FFF009E50D2 /* UIKit.framework */; };
 		4E376F0D19B90FFF009E50D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E376F0B19B90FFF009E50D2 /* InfoPlist.strings */; };
 		4E376F0F19B90FFF009E50D2 /* FoursquareTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E376F0E19B90FFF009E50D2 /* FoursquareTestTests.m */; };
+		4E376F1D19B91453009E50D2 /* Searcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E376F1C19B91453009E50D2 /* Searcher.m */; };
+		F094F3CD0C2E49B58A7E7BDC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA8C26E7F2AE4B92AFAFAEF2 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,10 @@
 		4E376F0A19B90FFF009E50D2 /* FoursquareTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FoursquareTestTests-Info.plist"; sourceTree = "<group>"; };
 		4E376F0C19B90FFF009E50D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4E376F0E19B90FFF009E50D2 /* FoursquareTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoursquareTestTests.m; sourceTree = "<group>"; };
+		4E376F1B19B91453009E50D2 /* Searcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Searcher.h; sourceTree = "<group>"; };
+		4E376F1C19B91453009E50D2 /* Searcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Searcher.m; sourceTree = "<group>"; };
+		BA097B41F2864264BA8C83F8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		EA8C26E7F2AE4B92AFAFAEF2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 				4E376EEC19B90FFF009E50D2 /* CoreGraphics.framework in Frameworks */,
 				4E376EEE19B90FFF009E50D2 /* UIKit.framework in Frameworks */,
 				4E376EEA19B90FFF009E50D2 /* Foundation.framework in Frameworks */,
+				F094F3CD0C2E49B58A7E7BDC /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +88,7 @@
 				4E376F0819B90FFF009E50D2 /* FoursquareTestTests */,
 				4E376EE819B90FFF009E50D2 /* Frameworks */,
 				4E376EE719B90FFF009E50D2 /* Products */,
+				BA097B41F2864264BA8C83F8 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +108,7 @@
 				4E376EEB19B90FFF009E50D2 /* CoreGraphics.framework */,
 				4E376EED19B90FFF009E50D2 /* UIKit.framework */,
 				4E376F0219B90FFF009E50D2 /* XCTest.framework */,
+				EA8C26E7F2AE4B92AFAFAEF2 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -107,6 +116,8 @@
 		4E376EEF19B90FFF009E50D2 /* FoursquareTest */ = {
 			isa = PBXGroup;
 			children = (
+				4E376F1B19B91453009E50D2 /* Searcher.h */,
+				4E376F1C19B91453009E50D2 /* Searcher.m */,
 				4E376EF819B90FFF009E50D2 /* AppDelegate.h */,
 				4E376EF919B90FFF009E50D2 /* AppDelegate.m */,
 				4E376EFB19B90FFF009E50D2 /* Images.xcassets */,
@@ -151,9 +162,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4E376F1219B90FFF009E50D2 /* Build configuration list for PBXNativeTarget "FoursquareTest" */;
 			buildPhases = (
+				39224185A24C460AA8185CBE /* Check Pods Manifest.lock */,
 				4E376EE219B90FFF009E50D2 /* Sources */,
 				4E376EE319B90FFF009E50D2 /* Frameworks */,
 				4E376EE419B90FFF009E50D2 /* Resources */,
+				77677CE1359244E5A1CF2F3D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,6 +247,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		39224185A24C460AA8185CBE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		77677CE1359244E5A1CF2F3D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4E376EE219B90FFF009E50D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -241,6 +287,7 @@
 			files = (
 				4E376EFA19B90FFF009E50D2 /* AppDelegate.m in Sources */,
 				4E376EF619B90FFF009E50D2 /* main.m in Sources */,
+				4E376F1D19B91453009E50D2 /* Searcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +401,7 @@
 		};
 		4E376F1319B90FFF009E50D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA097B41F2864264BA8C83F8 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -367,6 +415,7 @@
 		};
 		4E376F1419B90FFF009E50D2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA097B41F2864264BA8C83F8 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -437,6 +486,7 @@
 				4E376F1419B90FFF009E50D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4E376F1519B90FFF009E50D2 /* Build configuration list for PBXNativeTarget "FoursquareTestTests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +495,7 @@
 				4E376F1719B90FFF009E50D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
