@@ -53,7 +53,7 @@
     theLandingCoords.longitude = -122.202269;
     
     
-    self.currentLocation = covingtonCoords;
+    self.currentLocation = genUICoords;
     
     [self findRestaurantsResults];
 }
@@ -66,7 +66,7 @@
                               VERSION,
                               self.currentLocation.latitude,
                               self.currentLocation.longitude,
-                              20,   // request limit
+                              40,   // request limit
                               @"4d4b7105d754a06377d81259", // this is the food category.
                               10 // radius
                               ];
@@ -84,7 +84,7 @@
                  CLLocationDegrees lng = [(NSNumber *)[[venue objectForKey:@"location"] objectForKey:@"lng"] doubleValue];
                  CLLocationCoordinate2D coords = CLLocationCoordinate2DMake(lat, lng);
                  NSString *coordsString = [self stringFromCL2D:CLLocationCoordinate2DMake(coords.latitude, coords.longitude)];
-                 NSLog(@"%@, \t%@, %@", venue[@"name"], coordsString, venue[@"location"][@"formattedAddress"][0]);
+                 NSLog(@"%@, %@, \t%@", venue[@"name"], venue[@"location"][@"formattedAddress"][0], coordsString);
              }
          }
          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
